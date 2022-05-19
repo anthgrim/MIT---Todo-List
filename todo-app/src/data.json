@@ -1,0 +1,22 @@
+{
+    "todos": [
+        {
+            "id": 0,
+            "text": "learn react",
+            "isRushed": false,
+            "isDeleted": false
+        },
+        {
+            "id": 1,
+            "text": "meet friend for lunch",
+            "isRushed": false,
+            "isDeleted": false
+        },
+        {
+            "id": 2,
+            "text": "take a shower",
+            "isRushed": false,
+            "isDeleted": false
+        }
+    ]
+}
