@@ -39,6 +39,10 @@ body{
   color: white;
 }
 
+.submit{
+  background-color: green;
+}
+
 .delete {
   background-color: #ef233c;
 }

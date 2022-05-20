@@ -8,7 +8,7 @@ const Todo = ( { text, isRushed, onRush, onDelete } ) => {
 
     return (
         <div className="todo-item" style={isRushed ? completeStyle : null}>
-            <span>{text} {isRushed ? "- Priority" : ""}</span>
+            <span>{text} {isRushed ? "- RUSH" : ""}</span>
             <div className="btn-group">
                 {!isRushed && <button title="Rush" className="custom-btn rush" onClick={onRush}>O</button>}
                 <button title="Delete" className="custom-btn delete" onClick={onDelete}>X</button>
