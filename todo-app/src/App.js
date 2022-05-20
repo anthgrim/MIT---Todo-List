@@ -5,9 +5,7 @@ import Form from './components/Form';
 import data from "./data.json"
 
 function App() {
-  const defaultValue = ''
   const [ todos, setTodos ] = useState(data.todos)
-  const [ value, setValue] = useState(defaultValue)
 
   const handleDelete = (id) => {
     setTodos(prevTodos => {
@@ -25,37 +23,19 @@ function App() {
     })
   }
 
-  const handleInputChange = (event) => {
-    const { value } = event.target;
-    
-    if(value === '') {
-      setValue(defaultValue)
-      return
-    }
-
-    const newTodo = {
-      id: todos.length,
-      text: value,
-      isRushed: false,
-      isDeleted: false
-    }
-    
-    setValue(newTodo)
+  const addTodo = (newTodo) => {
+    setTodos(prevTodos => ([...prevTodos, newTodo]))
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if(!value) return
-    setTodos(prevTodos => ([...prevTodos, value]))
-    setValue(defaultValue)
-  }
+  const sortedTodo = todos.sort((a,b) => b.isRushed - a.isRushed)
 
-  const todoList = todos.map((todo,index) => {
+  const todoList = sortedTodo.map((todo) => {
     return (
       <>
         {!todo.isDeleted && 
-          <Todo 
-            text={todo.text} key={index} 
+          <Todo
+            text={todo.text}
+            key={todo.id} 
             isRushed={todo.isRushed}
             onRush={() => handleRushed(todo.id)} 
             onDelete={() => handleDelete(todo.id)}
@@ -67,11 +47,7 @@ function App() {
   return (
     <div className="App">
       <h1>Todo List</h1>
-      <Form 
-        onInputChange={event => handleInputChange(event)} 
-        targetValue={value}
-        onSubmitForm={event => handleSubmit(event)}
-      />
+      <Form addTodo={addTodo} totalTodos={todos.length}/>
       <div className='todos-wrapper'>
         {todoList}
       </div>
