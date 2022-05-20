@@ -7,6 +7,19 @@ body{
   color: #343a40;
 }
 
+.custom-form{
+  display: flex;
+  flex-direction: column;
+  margin: 0 25%;
+}
+
+.textbox{
+  border: transparent;
+  border-bottom: 1px solid #343a4060;
+  margin: 0px 5px;
+  padding: 10px;
+}
+
 .todos-wrapper{
   padding: 10px;
 }
@@ -40,7 +53,16 @@ body{
 }
 
 .submit{
-  background-color: green;
+  background-color: #343a40;
+  margin: 5px 25%;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.submit:hover{
+  background-color: #339989;
+  transform: translateY(-3px);
+  box-shadow: 0px 2px 5px 2px #33998a8f;
 }
 
 .delete {

@@ -3,7 +3,7 @@ import React from "react"
 const Form = ( { onInputChange, targetValue, onSubmitForm } ) => {
     return (
         <>
-            <form onSubmit={onSubmitForm}>
+            <form onSubmit={onSubmitForm} className="custom-form">
                 <input 
                     type="text"
                     className="textbox"
@@ -11,13 +11,7 @@ const Form = ( { onInputChange, targetValue, onSubmitForm } ) => {
                     value={targetValue.value}
                     placeholder="Add Todo..."
                     onChange={onInputChange} 
-                />
-                {/* <input 
-                    type="checkbox" 
-                    className="checkbox"
-                    name={isRushed}
-                    checked={isRushed}
-                /> */}
+                />     
                 <button className="custom-btn submit">Submit</button>
             </form>
         </>

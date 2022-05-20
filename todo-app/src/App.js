@@ -27,16 +27,19 @@ function App() {
 
   const handleInputChange = (event) => {
     const { value } = event.target;
+    
     if(value === '') {
       setValue(defaultValue)
       return
     }
+
     const newTodo = {
       id: todos.length,
       text: value,
       isRushed: false,
       isDeleted: false
     }
+    
     setValue(newTodo)
   }
 
