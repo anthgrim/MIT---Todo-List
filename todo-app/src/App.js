@@ -35,6 +35,7 @@ function App() {
         {!todo.isDeleted && 
           <Todo
             text={todo.text}
+            id={todo.id}
             key={todo.id} 
             isRushed={todo.isRushed}
             onRush={() => handleRushed(todo.id)} 
